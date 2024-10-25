@@ -10,13 +10,37 @@ config_version=5
 
 [application]
 
-config/name="dxmachina"
-config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+config/name="DxMachina"
+run/main_scene="res://windows/main_window/main_window.tscn"
+config/features=PackedStringArray("4.3", "C#", "GL Compatibility")
+run/low_processor_mode=true
+run/low_processor_mode_sleep_usec=6000
+boot_splash/show_image=false
+config/icon="res://ui/logo.svg"
+
+[autoload]
+
+Autoload="*res://scripts/Autoload.cs"
+
+[display]
+
+window/size/viewport_width=1366
+window/size/viewport_height=768
+window/size/borderless=true
+window/size/window_width_override=1366
+window/size/window_height_override=768
 
 [dotnet]
 
 project/assembly_name="dxmachina"
+
+[gui]
+
+theme/custom="res://ui/ui.theme"
+
+[physics]
+
+common/physics_ticks_per_second=160
 
 [rendering]
 

@@ -1,0 +1,203 @@
+[gd_scene load_steps=11 format=3 uid="uid://daf8uceor6xiv"]
+
+[ext_resource type="Texture2D" uid="uid://bbmekm0sa40fi" path="res://ui/godot.svg" id="1_6g77e"]
+[ext_resource type="Script" path="res://windows/main_window/WindowTopBar.cs" id="2_6u27l"]
+[ext_resource type="Texture2D" uid="uid://c0k7p0rigad58" path="res://ui/icons/window/minimize.svg" id="3_dr7ba"]
+[ext_resource type="Texture2D" uid="uid://b70dhmqo2qqa" path="res://ui/logo.svg" id="3_jhokn"]
+[ext_resource type="Texture2D" uid="uid://b06bd78k08vlb" path="res://ui/icons/window/maximize.svg" id="4_prj8u"]
+[ext_resource type="Texture2D" uid="uid://bw0h4ifkjcure" path="res://ui/icons/window/close.svg" id="5_nrxn0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wo4uu"]
+bg_color = Color(0.281187, 0.281187, 0.281187, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j3rtj"]
+bg_color = Color(0.10748, 0.10748, 0.10748, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dt6ly"]
+bg_color = Color(0.08469, 0.0846899, 0.0846899, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cro4d"]
+bg_color = Color(0.122252, 0.122252, 0.122252, 1)
+
+[node name="MainWindow" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wo4uu")
+
+[node name="VSplitContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Title bar" type="Control" parent="VSplitContainer" node_paths=PackedStringArray("CloseButton", "MaxButton", "MinButton")]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+script = ExtResource("2_6u27l")
+CloseButton = NodePath("HSplitContainer/Window buttons/Close")
+MaxButton = NodePath("HSplitContainer/Window buttons/Maximize")
+MinButton = NodePath("HSplitContainer/Window buttons/Minimize")
+
+[node name="Background" type="Panel" parent="VSplitContainer/Title bar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_j3rtj")
+
+[node name="HSplitContainer" type="HBoxContainer" parent="VSplitContainer/Title bar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Profile" type="MenuButton" parent="VSplitContainer/Title bar/HSplitContainer"]
+custom_minimum_size = Vector2(232, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_constants/icon_max_width = 32
+text = "{very_long_username}"
+icon = ExtResource("1_6g77e")
+text_overrun_behavior = 3
+item_count = 2
+popup/item_0/text = "Account"
+popup/item_1/text = "Sign out"
+popup/item_1/id = 1
+
+[node name="Logo" type="HBoxContainer" parent="VSplitContainer/Title bar/HSplitContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VSplitContainer/Title bar/HSplitContainer/Logo"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="TextureRect" type="TextureRect" parent="VSplitContainer/Title bar/HSplitContainer/Logo/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("3_jhokn")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="VSplitContainer/Title bar/HSplitContainer/Logo"]
+layout_mode = 2
+text = "dxmachina"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Window buttons" type="HBoxContainer" parent="VSplitContainer/Title bar/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="Minimize" type="Button" parent="VSplitContainer/Title bar/HSplitContainer/Window buttons"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+focus_mode = 0
+theme_override_colors/icon_normal_color = Color(0.46776, 0.416749, 0.730306, 1)
+theme_override_constants/icon_max_width = 32
+icon = ExtResource("3_dr7ba")
+
+[node name="Maximize" type="Button" parent="VSplitContainer/Title bar/HSplitContainer/Window buttons"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+focus_mode = 0
+theme_override_colors/icon_normal_color = Color(0.384693, 0.505034, 0.505468, 1)
+theme_override_constants/icon_max_width = 32
+icon = ExtResource("4_prj8u")
+
+[node name="Close" type="Button" parent="VSplitContainer/Title bar/HSplitContainer/Window buttons"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+focus_mode = 0
+theme_override_colors/icon_normal_color = Color(0.705034, 0.331343, 0.433295, 1)
+theme_override_constants/icon_max_width = 32
+icon = ExtResource("5_nrxn0")
+
+[node name="Tool bar" type="Control" parent="VSplitContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Background" type="Panel" parent="VSplitContainer/Tool bar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dt6ly")
+
+[node name="Buttons" type="HSplitContainer" parent="VSplitContainer/Tool bar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+dragger_visibility = 1
+
+[node name="Tool buttons" type="HBoxContainer" parent="VSplitContainer/Tool bar/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Folders" type="MarginContainer" parent="VSplitContainer/Tool bar/Buttons/Tool buttons"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VSplitContainer/Tool bar/Buttons/Tool buttons/Folders"]
+layout_mode = 2
+focus_mode = 0
+theme_override_constants/icon_max_width = 32
+text = "Folders"
+
+[node name="Settings" type="MarginContainer" parent="VSplitContainer/Tool bar/Buttons/Tool buttons"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VSplitContainer/Tool bar/Buttons/Tool buttons/Settings"]
+layout_mode = 2
+focus_mode = 0
+theme_override_constants/icon_max_width = 32
+text = "Settings"
+
+[node name="Window margin" type="MarginContainer" parent="VSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Window container" type="Control" parent="VSplitContainer/Window margin"]
+layout_mode = 2
+
+[node name="Background" type="Panel" parent="VSplitContainer/Window margin/Window container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cro4d")
+
+[node name="Systems" type="Node" parent="."]

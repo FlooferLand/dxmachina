@@ -1,0 +1,35 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dxmachina", "dxmachina.csproj", "{B87FA791-45BF-4A02-B166-C371C92F1595}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GodotUtils", "GodotUtils\GodotUtils.csproj", "{73C13B9E-B4DA-4A02-B7C4-CD7CF9588FAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachinaLibrary", "MachinaLibrary\MachinaLibrary.csproj", "{3085D094-3031-4D7F-86CE-A4A62A06ADF2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B87FA791-45BF-4A02-B166-C371C92F1595}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B87FA791-45BF-4A02-B166-C371C92F1595}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B87FA791-45BF-4A02-B166-C371C92F1595}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{B87FA791-45BF-4A02-B166-C371C92F1595}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{B87FA791-45BF-4A02-B166-C371C92F1595}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{B87FA791-45BF-4A02-B166-C371C92F1595}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+		{73C13B9E-B4DA-4A02-B7C4-CD7CF9588FAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73C13B9E-B4DA-4A02-B7C4-CD7CF9588FAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73C13B9E-B4DA-4A02-B7C4-CD7CF9588FAD}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{73C13B9E-B4DA-4A02-B7C4-CD7CF9588FAD}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{73C13B9E-B4DA-4A02-B7C4-CD7CF9588FAD}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{73C13B9E-B4DA-4A02-B7C4-CD7CF9588FAD}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+		{3085D094-3031-4D7F-86CE-A4A62A06ADF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3085D094-3031-4D7F-86CE-A4A62A06ADF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3085D094-3031-4D7F-86CE-A4A62A06ADF2}.ExportDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3085D094-3031-4D7F-86CE-A4A62A06ADF2}.ExportDebug|Any CPU.Build.0 = Debug|Any CPU
+		{3085D094-3031-4D7F-86CE-A4A62A06ADF2}.ExportRelease|Any CPU.ActiveCfg = Debug|Any CPU
+		{3085D094-3031-4D7F-86CE-A4A62A06ADF2}.ExportRelease|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+EndGlobal
